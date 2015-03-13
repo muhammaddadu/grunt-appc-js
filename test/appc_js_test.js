@@ -1,6 +1,6 @@
 'use strict';
 
-var grunt = require('grunt');
+var appcJs = require('../tasks/appc_js.js');
 
 /*
 	======== A Handy Little Nodeunit Reference ========
@@ -39,24 +39,14 @@ exports.appcJs = {
 	defaultOptions: function (test) {
 		test.expect(1);
 
-		var actual = grunt.file.read('test/expected/default_options');
-		var expected = grunt.file.read('test/expected/default_options');
-		test.equal(actual, expected, 'should describe what the default behavior is.');
+		var holder = {};
+		
+		holder.registerMultiTask = function (name, description, func) {
+			test.equal(name, 'appcJs');
+		};
+
+		appcJs(holder);
 
 		test.done();
-	},
-	/**
-	 * Custom options
-	 * @param  {[type]} test [description]
-	 * @return {[type]}      [description]
-	 */
-	customOptions: function (test) {
-		test.expect(1);
-
-		var actual = grunt.file.read('test/expected/custom_options');
-		var expected = grunt.file.read('test/expected/custom_options');
-		test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
-
-		test.done();
-	},
+	}
 };
