@@ -41,7 +41,7 @@
     "grunt-bump": "^0.3.0",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt-appc-coverage": "git://github.com/appcelerator-modules/grunt-appc-coverage.git",
+    "grunt-appc-coverage": "^0.2.0",
     "grunt-kahvesi": "git://github.com/appcelerator-modules/grunt-kahvesi.git"
   },
   "peerDependencies": {
